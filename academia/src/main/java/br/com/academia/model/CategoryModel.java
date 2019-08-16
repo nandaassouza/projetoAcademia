@@ -1,26 +1,30 @@
 package br.com.academia.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "category")
 public class CategoryModel {
-	private String title;
-	private String description;
-	private String category;
 	
-	public String getTitle() {
-		return title;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int idCategory;
+	private String name;
+	
+	public int getIdCategory() {
+		return idCategory;
 	}
-	public void setTitle(String title) {
-		this.title = title;
+	public void setIdCategory(int idCategory) {
+		this.idCategory = idCategory;
 	}
-	public String getDescription() {
-		return description;
+	public String getName() {
+		return name;
 	}
-	public void setDescription(String description) {
-		this.description = description;
+	public void setName(String name) {
+		this.name = name;
 	}
-	public String getCategory() {
-		return category;
-	}
-	public void setCategory(String category) {
-		this.category = category;
-	}
+	
 }

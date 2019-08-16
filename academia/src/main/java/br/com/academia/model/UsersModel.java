@@ -1,12 +1,26 @@
 package br.com.academia.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "users")
 public class UsersModel {
+	
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int idUser;
 	private String name;
 	private String adress;
 	private String document;
 	private String date;
 	private String weight;
 	private String width;
+	private String privilegio;
+	
+	
 	public String getName() {
 		return name;
 	}
@@ -43,6 +57,17 @@ public class UsersModel {
 	public void setWidth(String width) {
 		this.width = width;
 	}
-	
+	public int getIdUser() {
+		return idUser;
+	}
+	public void setIdUser(int idUser) {
+		this.idUser = idUser;
+	}
+	public String getPrivilegio() {
+		return privilegio;
+	}
+	public void setPrivilegio(String privilegio) {
+		this.privilegio = privilegio;
+	}
 	
 }
